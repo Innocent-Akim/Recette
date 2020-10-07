@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="97973970-cd5e-4534-825b-df32b75d7727">
+	<property name="ireport.zoom" value="1.7261356071965521"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="156"/>
+	<queryString>
+		<![CDATA[SELECT * FROM RAPPORTOK]]>
+	</queryString>
+	<field name="NUMERO" class="java.lang.Integer"/>
+	<field name="ARTICLE" class="java.lang.String"/>
+	<field name="Unite" class="java.lang.String"/>
+	<field name="QUANTITE" class="java.lang.Double"/>
+	<field name="PA" class="java.lang.Double"/>
+	<field name="PV" class="java.lang.Double"/>
+	<field name="TOTALPA" class="java.lang.Double"/>
+	<field name="TOTALPV" class="java.lang.Double"/>
+	<field name="RECETE" class="java.lang.Double"/>
+	<field name="DATE" class="java.lang.String"/>
+	<field name="ENTETEAPPRO" class="java.lang.Integer"/>
+	<field name="AGENCE" class="java.lang.String"/>
+	<variable name="RECETE_1" class="java.lang.Double" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{RECETE}]]></variableExpression>
+	</variable>
+	<variable name="TOTALPA_1" class="java.lang.Double" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTALPA}]]></variableExpression>
+	</variable>
+	<variable name="TOTALPV_1" class="java.lang.Double" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTALPV}]]></variableExpression>
+	</variable>
+	<group name="AGENCE">
+		<groupExpression><![CDATA[$F{AGENCE}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField>
+					<reportElement mode="Transparent" x="0" y="0" width="802" height="20" backcolor="#CCCCCC" uuid="b60ad67c-2882-46b0-81c4-f684b0035f47"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" "+$F{AGENCE}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="DATE">
+		<groupExpression><![CDATA[$F{DATE}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField>
+					<reportElement mode="Transparent" x="0" y="0" width="802" height="20" backcolor="#CCCCCC" uuid="db498c80-45b5-4706-bd6b-1342ff77225d"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" DATE D'APPROV "+$F{DATE}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="ENTETEAPPRO">
+		<groupExpression><![CDATA[$F{ENTETEAPPRO}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField>
+					<reportElement mode="Transparent" x="0" y="0" width="802" height="20" backcolor="#CCCCCC" uuid="ddc944ff-8fe3-4c11-83aa-92fa7ab1a58e"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Cambria" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" NUMERO "+"00"+$F{ENTETEAPPRO}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="19" width="802" height="42" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="0d955964-45c8-4595-bcda-748844e5a687"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FICHE RESULTAT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="48" y="0" width="264" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="afaf3d94-9933-4e97-927f-08989c489a8b"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  ARTICLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="377" y="0" width="52" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="6741966f-e8bc-48c8-aafb-9e36ad6876f4"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QUANTITE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="489" y="0" width="66" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="096e2808-46d4-49a0-a682-38747416d953"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  PV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="312" y="0" width="65" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="28797768-bc6f-40e0-a53e-5d114de738f2"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  UNITE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="429" y="0" width="60" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="d391d36f-a084-49b9-acd8-9e8e699dfb5e"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  PA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="48" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="0c8e2a36-6771-4d5b-a4d7-6287a8fa9cef"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="724" y="0" width="78" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="edb6064b-ac06-4f03-ade1-4a4fc22256ec"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  BENEFICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="555" y="0" width="80" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="366c4d1b-483b-45da-a2d1-d70c6ad3591c"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ TOTAL PV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="635" y="0" width="89" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="dc30876c-5906-4fbc-b3e3-1b222e1b1df6"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  TOTAL PA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="48" y="0" width="264" height="20" uuid="391a3ad1-4a1b-42cd-acd2-452a49bc04ce"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$F{ARTICLE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="377" y="0" width="52" height="20" uuid="47764e0f-8a2f-4342-97de-c2b76bf7ef34"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$F{QUANTITE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="0" width="60" height="20" uuid="fcc7bd0f-35f3-4236-ab66-dfbe0c97d618"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$F{PA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="489" y="0" width="66" height="20" uuid="f87934f8-3c18-49ee-9688-e225f801b6a7"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$F{PV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="0" width="65" height="20" uuid="acbaa3d0-ea0f-4fd2-8aad-ad58d7bd3130"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$F{Unite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="48" height="20" uuid="bf1e0b6d-2c06-4bd1-ac4a-079c6de3dd5c"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="724" y="0" width="78" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="2fc60f46-c897-485b-a705-aeb76f9de254"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$F{RECETE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="555" y="0" width="80" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="cd23aa0d-ed1e-4589-9130-d13d352a4c10"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$F{TOTALPV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="635" y="0" width="89" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="62583fdc-a1c2-4b73-ad7a-4ac67149b12e"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Cambria" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$F{TOTALPA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20">
+			<textField>
+				<reportElement mode="Opaque" x="724" y="0" width="78" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="ca2121d7-4a1d-482c-be43-1f937f12936f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{RECETE_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="635" y="0" width="89" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="6d26455b-71fe-43c5-ae2e-b8adb7afd01b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TOTALPA_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="555" y="0" width="80" height="20" forecolor="#FFFFFF" backcolor="#00B0B9" uuid="ed4cb6b1-84bb-4ad5-8e86-d3a4f3a53485"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TOTALPV_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="131">
+			<textField>
+				<reportElement x="682" y="111" width="80" height="20" uuid="2ad2edd6-48a3-4300-a3c8-aa0473a71e39"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="762" y="111" width="40" height="20" uuid="7973def5-c96f-4d90-98b1-eeaa4d43abc9"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="111" width="274" height="20" uuid="93cbfcf3-694d-400a-8530-7e527945bddf"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band/>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

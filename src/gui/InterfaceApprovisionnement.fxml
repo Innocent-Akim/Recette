@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.InterfaceApprovisionnementController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefWidth="640.0" style="-fx-background-color: #FFF;">
+         <children>
+            <JFXButton fx:id="BtnEnregistre" buttonType="RAISED" layoutX="258.0" layoutY="269.0" onAction="#EnregistreAll" prefHeight="29.0" prefWidth="108.0" style="-fx-background-color: #9F3726; -fx-border-radius: 4em; -fx-background-radius: 4em;" text="Valider" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS_CIRCLE" size="15" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="43.0" layoutY="9.0" text="Approvissionnement" textFill="#7c7979b0">
+               <font>
+                  <Font name="Century Gothic Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="3.0" prefHeight="30.0" prefWidth="32.0" textFill="#03153d">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+               <graphic>
+                  <MaterialIconView fill="#9f3726" glyphName="ASSIGNMENT" size="30" text="" />
+               </graphic>
+            </Label>
+            <AnchorPane layoutY="344.0" prefHeight="45.0" prefWidth="640.0" style="-fx-background-color: #D7D8D9;">
+               <children>
+                  <Text fill="#377f94" layoutX="54.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Les articles sont regroupé par numero d'approvissionnement pour facité le suivit de ce dernier dans les differents entrer " wrappingWidth="325.646484375" />
+                  <MaterialDesignIconView fill="WHITE" glyphName="QRCODE" layoutX="14.0" layoutY="34.0" size="35" />
+               </children>
+            </AnchorPane>
+            <Text fill="#7c7979" layoutX="400.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numéro d'Approvissionnement" wrappingWidth="187.162109375" />
+            <Label layoutX="433.0" layoutY="25.0" onMouseClicked="#Next" text="NEXT" textFill="#7c7979">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CARET_RIGHT" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label layoutX="516.0" layoutY="25.0" onMouseClicked="#Prev" text="PREV" textFill="#7c7979">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CARET_LEFT" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <GridPane hgap="5.0" layoutX="68.0" layoutY="85.0" prefHeight="167.0" prefWidth="503.0" vgap="5.0" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="69.0" AnchorPane.topAnchor="85.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="70.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="410.0" minWidth="10.0" prefWidth="410.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="TfdArticle" onKeyReleased="#TfdkeyRelesed" prefHeight="31.0" prefWidth="276.0" promptText="Entrez la désignation de l'Article" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="TfdQte" onKeyReleased="#isNumeriqueQte" prefHeight="29.0" prefWidth="410.0" promptText="Entrez la Quantite de l'Articcle" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="TfdPA" onKeyReleased="#IsnumeriquePA" prefHeight="41.0" prefWidth="276.0" promptText="Entrez le PA de l'Articcle" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="TfdPv" onKeyReleased="#IsnumeriquePv" prefHeight="27.0" prefWidth="410.0" promptText="Entrez le PV de l'Articcle" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="CbxAgence" prefHeight="33.0" prefWidth="410.0" promptText="Selectionner l'Agence" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" GridPane.columnIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="161.0" text="Agence" textFill="#787878">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CARET_RIGHT" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="163.0" text="Article" textFill="#787878" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CARET_RIGHT" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="175.0" text="Quantite" textFill="#787878" GridPane.rowIndex="2">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CARET_RIGHT" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="169.0" text="P.Achat" textFill="#787878" GridPane.rowIndex="3">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CARET_RIGHT" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="170.0" text="P.Vente" textFill="#787878" GridPane.rowIndex="4">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CARET_RIGHT" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <VBox layoutX="585.0" layoutY="54.0" prefHeight="29.0" prefWidth="0.0">
+               <children>
+                  <JFXButton fx:id="BtnAjouter" buttonType="RAISED" onAction="#EnregistreAll" prefHeight="11.0" prefWidth="30.0" style="-fx-background-color: #9F3726; -fx-border-radius: 4em; -fx-background-radius: 4em;" text="+" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <DatePicker fx:id="datePick" layoutX="165.0" layoutY="55.0" prefHeight="27.0" prefWidth="410.0" promptText="Date de l'approvissionnement" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" />
+            <Label layoutX="68.0" layoutY="59.0" prefHeight="19.0" prefWidth="70.0" text="Date" textFill="#8d8b8b">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CARET_RIGHT" />
+               </graphic>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <HBox layoutX="189.0" layoutY="16.0">
+               <children>
+                  <Label fx:id="QteDisponible" prefHeight="19.0" prefWidth="78.0" text="00" textFill="#787878">
+                     <graphic>
+                        <FontAwesomeIconView fill="#9f3726" glyphName="USER" size="15" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Bnefice" prefHeight="19.0" prefWidth="70.0" text="00" textFill="#787878">
+                     <graphic>
+                        <FontAwesomeIconView fill="#9f3726" glyphName="USER" size="15" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pvente" prefHeight="19.0" prefWidth="70.0" text="00" textFill="#787878">
+                     <graphic>
+                        <FontAwesomeIconView fill="#9f3726" glyphName="USER" size="15" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Button fx:id="reFreshiPV" layoutX="587.0" layoutY="117.0" mnemonicParsing="false" onAction="#EnregistreAll" prefHeight="25.0" prefWidth="13.0" style="-fx-background-color: #9F3726; -fx-background-radius: 4em; -fx-border-radius: 4em;">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="189.0" layoutY="1.0" prefHeight="17.0" prefWidth="52.0" text="Quantite" textFill="#787878">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="255.0" prefHeight="17.0" prefWidth="52.0" text="Recette" textFill="#787878">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="323.0" layoutY="-1.0" prefHeight="17.0" prefWidth="52.0" text="P.vente" textFill="#787878">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="codeAppro" alignment="CENTER" layoutX="476.0" layoutY="25.0" prefHeight="17.0" prefWidth="40.0" text="00">
+               <font>
+                  <Font name="Anthrax" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

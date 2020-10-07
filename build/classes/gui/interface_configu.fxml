@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="configuration" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="556.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Interface_configuController">
+   <children>
+      <GridPane hgap="6.0" layoutX="68.0" layoutY="85.0" prefHeight="180.0" prefWidth="420.0" vgap="5.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TextField fx:id="TfdServeur" prefHeight="25.0" prefWidth="358.0" promptText="Entrer le nom du server" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" GridPane.columnIndex="1" />
+            <TextField fx:id="TfdDb" prefHeight="25.0" prefWidth="358.0" promptText="Entrer le nom de la Base de donne" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="TfdLogin" prefHeight="25.0" prefWidth="358.0" promptText="Entrer la Login" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <PasswordField fx:id="TfdPwd" prefHeight="25.0" prefWidth="358.0" promptText="Entrer le Mot depasse" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="Url" onMouseClicked="#mouseClickUrl" prefHeight="25.0" prefWidth="358.0" promptText="Entrer le Chemin " styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Text fill="#787878" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer  Serveur" wrappingWidth="66.13671875" />
+            <Text fill="#787878" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer  Base de donne" wrappingWidth="66.13671875" GridPane.rowIndex="1" />
+            <Text fill="#787878" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer Login" wrappingWidth="54.13671875" GridPane.rowIndex="2" />
+            <Text fill="#787878" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer Password" wrappingWidth="54.13671875" GridPane.rowIndex="3" />
+            <Text fill="#787878" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer url-print" wrappingWidth="54.13671875" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <JFXButton fx:id="btnConfigurer" buttonType="RAISED" layoutX="212.0" layoutY="271.0" onAction="#ConfigurerAll" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #9F3726;" text="Configurer" textFill="WHITE" />
+      <Pane prefHeight="53.0" prefWidth="556.0" style="-fx-background-color: #9F3726;">
+         <children>
+            <Label alignment="CENTER" layoutX="-1.0" layoutY="6.0" prefHeight="41.0" prefWidth="556.0" text="Configuration du Serveur" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

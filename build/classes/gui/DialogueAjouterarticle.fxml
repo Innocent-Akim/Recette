@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="113.0" prefWidth="305.0" style="-fx-background-color: Transparent;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controler.DialogueAjouterarticleController">
+   <children>
+      <TextField fx:id="Tdfdesignation" layoutX="11.0" layoutY="14.0" prefHeight="25.0" prefWidth="283.0" promptText="Entrer la designation de l'article" style="-fx-background-color: Transparent;" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" />
+      <TextField fx:id="Tfdunite" layoutX="11.0" layoutY="49.0" onAction="#Alltraitement" prefHeight="25.0" prefWidth="283.0" promptText="Entrer l'unite de l'article" style="-fx-background-color: Transparent;" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" />
+      <JFXButton fx:id="BtnAjouter" buttonType="RAISED" layoutX="105.0" layoutY="84.0" onAction="#AllsourceEnregistrer" prefHeight="25.0" prefWidth="95.0" styleClass="BtnSelected" stylesheets="@../Style_Css/Object_Style.css" text="Ajouter">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

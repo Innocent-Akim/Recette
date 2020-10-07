@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="643.0" prefWidth="930.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appsoft.InterfaceAccueilController">
+   <children>
+      <ComboBox fx:id="cbxAgence" layoutX="61.0" layoutY="49.0" prefHeight="25.0" prefWidth="419.0" promptText="Selectionner l'Agence............................................................................" styleClass="textfiled" stylesheets="@../Style_Css/Object_Style.css" />
+      <PieChart fx:id="Pchart" layoutX="21.0" layoutY="117.0" prefHeight="512.0" prefWidth="878.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="131.0" />
+      <JFXButton fx:id="actualiser" buttonType="RAISED" layoutX="488.0" layoutY="50.0" onAction="#SelectedAgence" style="-fx-background-color: #9F3726;" text="REFRESH" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

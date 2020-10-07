@@ -1,0 +1,23 @@
+
+
+/*
+ * Empty Stylesheet file.
+ */
+
+.table-view,.tree-table-view{
+    -fx-table-header-border-color:transparent;
+    -fx-table-cell-border-color:-fx-box-border;
+    -fx-background-color: transparent;
+}
+.table-view .filler,tree-table-view .filler, .table-view .filler .column-header,
+.tree-table-view .column-header{
+    -fx-side: 65;
+    -fx-border-style: null;
+    -fx-border-color: -swatch-grey;
+    -fx-border-width: 0 0 2 0;
+    -fx-background-color: transparent;
+}
+.table-cell{
+    -fx-border-color: transparent;
+    -fx-border-width: 1; 
+}

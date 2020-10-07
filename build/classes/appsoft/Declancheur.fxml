@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="i" prefHeight="744.0" prefWidth="1029.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appsoft.DeclancheurController">
+   <children>
+      <StackPane fx:id="Ecran" layoutX="69.0" layoutY="26.0" prefHeight="643.0" prefWidth="930.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="26.0" />
+      <AnchorPane layoutY="5.0" prefHeight="739.0" prefWidth="69.0" style="-fx-background-color: #9F3726;" styleClass="BordRight" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane layoutY="85.0" vgap="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label fx:id="labNew" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#CallNew" prefHeight="44.0" prefWidth="67.0" text="Nouveau" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ANIMATION" size="27" />
+                     </graphic>
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="labRapport" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#CallReport" prefHeight="44.0" prefWidth="70.0" text="Rapport" textFill="WHITE" GridPane.rowIndex="1">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="LAYERS" size="27" />
+                     </graphic>
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="labParametre" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#CallParametre" prefHeight="44.0" prefWidth="68.0" text="Parametre" textFill="WHITE" GridPane.rowIndex="2">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="KODI" size="27" />
+                     </graphic>
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="labStat" alignment="CENTER" contentDisplay="TOP" onMouseClicked="#CallStat" prefHeight="44.0" prefWidth="73.0" text="Accueil" textFill="WHITE" GridPane.rowIndex="3">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="TUNE_VERTICAL" size="27" text="" />
+                     </graphic>
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <Circle fx:id="profil" fill="WHITE" layoutX="1003.0" layoutY="15.0" radius="13.0" stroke="#b9b9b9" strokeType="INSIDE" AnchorPane.rightAnchor="13.0" />
+      <Label fx:id="labuserName" layoutX="888.0" layoutY="7.0" onMouseClicked="#callLock" styleClass="HandCursor" text="Mamu" textFill="#121313" AnchorPane.rightAnchor="51.0">
+         <font>
+            <Font name="Century Gothic" size="11.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#9f3726" glyphName="FLICKR" size="15" />
+         </graphic>
+      </Label>
+   </children>
+</AnchorPane>
